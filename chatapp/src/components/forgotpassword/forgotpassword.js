@@ -40,12 +40,6 @@ export default
     },
     methods:
     {
-      // register() {
-      //   router.push('/register')
-      // },
-      // forgotpassword() {
-      //   router.push('/forgotpassword')
-      // },
       getValidationClass(fieldName) {
         const field = this.$v.form[fieldName]
 
