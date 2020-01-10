@@ -10,6 +10,11 @@ import Vuelidate from "vuelidate";
 import forgotpassword from "../components/forgotpassword";
 import resetpassword from "../components/resetpassword";
 import dashboard from "../components/dashboard";
+import io from 'socket.io-client'
+import VueSocketIO from 'vue-socket.io'
+Vue.use(new VueSocketIO({
+connection: io('localhost:3000')
+}))
 
 Vue.use(MdButton)
 Vue.use(MdContent)
