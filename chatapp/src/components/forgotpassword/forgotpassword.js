@@ -4,7 +4,7 @@ import service from "../../services/userServices"
 import {
   required,
   email,
-  //minLength
+
 } from 'vuelidate/lib/validators'
 export default
   {
