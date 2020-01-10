@@ -1,0 +1,107 @@
+<!-- dashboard -->
+<div>
+  <div class="container clearfix">
+      <div class="people-list" id="people-list"><!--The div tag is used in HTML to make divisions of content in the web page-->
+      <div class=user>
+        <h2>Users</h2>
+      </div>
+      <ul class="list">
+        <li class="clearfix" v-for="user in users" :key="user.id">
+          <div class="about">
+            <div class="name">
+              <md-button class="md-raised md-primary" @click='person(user)'>{{user.firstName}} {{user.lastName}}
+              </md-button>
+            </div>
+            <div class="status">
+              <i class="fa fa-circle online"></i>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="chat">
+      <div class="chat-header clearfix">
+
+        <div class="chat-about">
+          <div class="chat-with">Chat with {{userName}}</div>
+          <div class="chat-num-messages"></div>
+        </div>
+        <i class="fa fa-star"></i>
+      </div> <!-- end chat-header -->
+
+      <div class="chat-history">
+
+
+        <ul>
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name">Lakshmi</span>
+
+            </div>
+            <div class="message other-message float-right">
+              
+            </div>
+          </li>
+
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Soumya</span>
+              <span class="message-data-time">10:12 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Are we meeting today? Project has been already finished and I have results to show you.
+            </div>
+          </li>
+
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time">10:14 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name">Lakshmi</span>
+
+            </div>
+            <div class="message other-message float-right">
+              Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any
+              problems at the last phase of the project?
+            </div>
+          </li>
+
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Soumya</span>
+              <span class="message-data-time">10:20 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Actually everything was fine. I'm very excited to show this to our team.
+            </div>
+          </li>
+
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"></i> Soumya</span>
+              <span class="message-data-time">10:31 AM, Today</span>
+            </div>
+
+            <!-- <i class="fa fa-circle online" style="color: #AED2A6"></i>
+            <i class="fa fa-circle online" style="color:#DAE9DA"></i> -->
+          </li>
+
+        </ul>
+
+      </div> <!-- end chat-history -->
+
+      <div class="chat-message clearfix">
+        <textarea name="message-to-send" id="message-to-send" placeholder="Type your message" rows="3"></textarea>
+
+        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+        <i class="fa fa-file-image-o"></i>
+
+        <button>Send</button>
+
+      </div> <!-- end chat-message -->
+
+    </div> <!-- end chat -->
+
+  </div>
+</div>

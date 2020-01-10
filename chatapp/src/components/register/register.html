@@ -1,0 +1,58 @@
+<!-- /*********************************************************************************************
+*@purpose:Fundoo Login page
+*@author:Soumya Chinnur
+*Date:31-12-2-19
+**********************************************************************************************/
+ -->
+
+<div class="centered-container">
+  <form novalidate class="md-layout" @submit.prevent="validateUser">
+  <md-card class="md-layout-item md-size-120 md-small-size-150" style="padding: 60px">
+
+    <md-content>
+      <div class="title">
+          <md-card-header>
+          <md-card-header-text>
+            <div class="md-title">Register</div>
+          </md-card-header-text>
+        </md-card-header>
+      </div>
+    </md-content>
+
+    <div class="form">
+      <md-field :class="getValidationClass('firstName')">
+        <label>First Name</label>
+        <md-input v-model="user.firstName" autofocus id="firstName" autocomplete="given-name"  :disabled="sending" />
+        <span class="md-error" v-if="!$v.user.firstName.required">The first name is required</span>
+        <span class="md-error" v-else-if="!$v.user.firstName.minlength">Invalid first name</span></md-input>
+      </md-field>
+
+      <md-field :class="getValidationClass('lastName')">
+        <label>Last Name</label>
+        <md-input v-model="user.lastName" autofocus :disabled="sending"/>
+        <span class="md-error" v-if="!$v.user.lastName.required">The last name is required</span>
+        <span class="md-error" v-else-if="!$v.user.lastName.minlength">Invalid last name</span></md-input>
+      </md-field>
+
+      <md-field :class="getValidationClass('email')" >
+        <label>Email</label>
+        <md-input autofocus id="email" autocomplete="email" v-model="user.email" :disabled="sending" />
+        <span class="md-error" v-if="!$v.user.email.required">The email is required</span>
+        <span class="md-error" v-else-if="!$v.user.email">Invalid email</span></md-input>
+      </md-field>
+
+      <md-field :class="getValidationClass('password')">
+        <label>Password</label>
+        <md-input v-model="user.password" type="password" :disabled="sending" />
+        <span class="md-error" v-if="!$v.user.password.required">The password is required</span>
+        <span class="md-error" v-else-if="!$v.user.password.minlength">Invalid password</span></md-input>
+      </md-field>
+    </div>
+ <div class="actions md-layout md-alignment-center-space-between" >
+      <md-button class="md-raised md-primary" type=submit>Sign In</md-button>
+      <md-button class="md-raised md-primary" type=submit>Sign Out</md-button>
+    </div>
+    </md-content>
+  </md-card>
+</form>
+</div>
